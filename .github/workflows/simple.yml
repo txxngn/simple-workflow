@@ -1,0 +1,21 @@
+name: simple workflow demonstrating keys in a yaml file
+
+on: push
+
+jobs: 
+  job1:
+    name: Description of what the first job does
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Step1
+        uses: actions/checkout@y2
+      - name: Step2
+        run: env | sort
+  job2:
+    name: Description of another job for this workflow
+    runs-on: windows-latest
+    steps:
+      - name: Step 1 for Windows
+        uses: actions/checkout@y2
+      - name: Step 2 for Windows
+        run: "GetChildItem Env: | Sort-Object Name"
